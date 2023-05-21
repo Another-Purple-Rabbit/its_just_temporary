@@ -12,7 +12,7 @@ class Order(models.Model):
     estimated_time = models.FloatField()
     started_at = models.DateTimeField(auto_now_add=True, verbose_name='Started at')
     finished_at = models.DateTimeField(auto_now_add=True, verbose_name='Finished at')
-    status = models.CharField(choices=[('pending', 'p'), ('complete', 'c'), ('rejected', 'r')], max_length=255)
+    status = models.CharField(choices=[('pending', 'pending'), ('complete', 'complete'), ('rejected', 'rejected')], max_length=255)
     price = models.FloatField()
     delivery = models.CharField(max_length=255)
     file = models.FileField(upload_to='documents/%Y-%m-%d %h-%m-%s')
